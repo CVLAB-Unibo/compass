@@ -46,6 +46,14 @@ To test the network,
 python 
 ```
 
+## Pretrained Models
+Pretrained models are available for download:
+| Training |  zip |
+|:-:|:--:|
+| 3DMatch | [weights]() |
+| 3DMatch Adapted | [weights]() |
+| ModelNet40 | [weights]() |
+
 ## Citation
 If you find this code useful in your research, please cite:
 ```
