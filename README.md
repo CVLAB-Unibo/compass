@@ -36,14 +36,14 @@ python setup.py install
 ### Training
 To train a new network from scratch, run:
 ```
-python train.py CONFIG.yaml
+python 
 ```
 For available training options, please take a look at `configs/default.yaml`.
 
 ## Test
 To test the network, 
 ```
-python test.py 
+python 
 ```
 
 ## Citation
