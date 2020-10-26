@@ -24,10 +24,10 @@ import os
 from open3d import *
 
 
-class SonicNetworkTrainer(nt.NetworkTrainer):
+class CompassNetworkTrainer(nt.NetworkTrainer):
 
     def __init__(self, *args, **kwargs):
-        super(SonicNetworkTrainer, self).__init__(*args, **kwargs)
+        super(CompassNetworkTrainer, self).__init__(*args, **kwargs)
 
         self.layer_s2 = None
         self.layer_lrf = None

@@ -8,7 +8,8 @@ import torch.utils.data
 import time
 import random
 
-from open3d import *
+import open3d as o3d
+import numpy as np
 
 from utils import io as uio
 from utils import geometry as ug
@@ -125,9 +126,9 @@ class LocalPointCloudDataset(torch.utils.data.Dataset):
                     #print("Deleted " + str(random_k) + " points (" + str(random_k/len(dist)*100) + "%% of the total)")
 
                     # Build KNN tree
-                    cloud = PointCloud()
-                    cloud.points = Vector3dVector(pts_rnd)
-                    kdtree = KDTreeFlann(cloud)
+                    cloud = o3d.geometry.PointCloud()
+                    cloud.points = o3d.utility.Vector3dVector(pts_rnd)
+                    kdtree = o3d.geometry.KDTreeFlann(cloud)
                     [_, indices, _] = kdtree.search_knn_vector_3d(pts_rnd[random_point_index], random_k)
 
                     # Delete points
@@ -221,24 +222,24 @@ class LocalPointCloudDataset(torch.utils.data.Dataset):
                 elif (self.dataset == "ModelNet"):
                     data, _ = uio.load_h5(f)
                     size_cloud_keypoints = data.shape[0]
-                    cloud = PointCloud() #geometry.PointCloud()
+                    cloud = o3d.geometry.PointCloud()
                 else:
                     if (self.dataset == "3DMatch"):
                         cloud = uio.read_ply_to_cloud_open3d(f)
                     if (self.dataset == "StanfordViews"):
                         cloud = uio.read_mesh_to_cloud(f)
-                    cloud_keypoints = voxel_down_sample(cloud, voxel_size=self.leaf_keypoints)
+                    cloud_keypoints = cloud.voxel_down_sample(voxel_size=self.leaf_keypoints)
                     size_cloud_keypoints = np.array(cloud_keypoints.points).shape[0]
                     cloud_keypoints.paint_uniform_color([0, 0, 1])
 
                 if (self.size_leaf > 0):
-                    cloud_down = voxel_down_sample(cloud, self.size_leaf)
+                    cloud_down = cloud.voxel_down_sample(self.size_leaf)
                 else:
                     cloud_down = cloud
 
                 if (self.dataset != "ShapeNet" and self.dataset != "ModelNet"):
                     cloud_down.paint_uniform_color([0, 0, 1])
-                    kdtree = KDTreeFlann(cloud_down) #geometry.KDTreeFlann(cloud_down)
+                    kdtree = o3d.geometry.KDTreeFlann(cloud_down)
 
                 for j in range(0, size_cloud_keypoints):
 

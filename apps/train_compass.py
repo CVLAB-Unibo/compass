@@ -1,5 +1,5 @@
 import argparse
-from models import network_trainer_sonic as nts
+from models import network_trainer_compass as ntc
 
 
 def parse_commandline():
@@ -31,11 +31,11 @@ def parse_commandline():
     parser.add_argument("--num_workers", type=int, default=1, help="Num of workers for data loader.")
     parser.add_argument("--size_batch", type=int, default=32, help="Size of batch.")
     parser.add_argument("--size_pcd", type=int, required=True, help="Number point for the reconstructed point cloud.")
-    parser.add_argument("--step_per_save", type=int, default=15, help="Export model and do validation every step_per_save.")
-    parser.add_argument("--step_per_viz", type=int, default=500, help="Update visualizer every step_per_viz.")
+    parser.add_argument("--step_per_save", type=int, default=500, help="Export model and do validation every step_per_save.")
+    parser.add_argument("--step_per_viz", type=int, default=15, help="Update visualizer every step_per_viz.")
     parser.add_argument("--use_gpu", type=int, default=1, help="Default 1, set it to 0 to use the CPU only. WARNING: this slows down the computation, use only for testing purposes or if you don't have a CUDA capable GPU.")
 
-    parser.add_argument("--name_data_set", type=str, default="3DMatch", help="Name of dataset: 3DMatch or StanfordViews.")
+    parser.add_argument("--name_data_set", type=str, default="3DMatch", help="Name of dataset: 3DMatch, StanfordViews, ModelNet, and ShapeNet.")
 
     parser.add_argument("--removal_augmentation", type=int, default=0, help="Randomly delete portions of the input to increase robustness.")
 
@@ -44,7 +44,7 @@ def parse_commandline():
 
 def main(args):
 
-    network_trainer = nts.SonicNetworkTrainer(args)
+    network_trainer = ntc.CompassNetworkTrainer(args)
 
     network_trainer.prepare()
 

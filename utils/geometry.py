@@ -13,9 +13,6 @@ import numpy as np
 import math
 import copy
 import torch
-from pyflare import pyflare
-
-from open3d import *
 
 
 def get_rotation_matrix(alfa, beta, gamma, hom_coord=False):
