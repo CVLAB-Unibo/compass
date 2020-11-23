@@ -1,0 +1,17 @@
+size_channels: 4
+size_bandwidth: 24
+lrf_bandwidths: [24, 24, 24, 24, 24]
+lrf_features: [4, 40, 20, 10, 1]
+augmentation: 1
+leaf_sub_sampling: 0.02
+leaf_keypoints: 0.75
+radius_descriptor: 1.0
+epochs_max: 80
+learning_rate: 0.0005
+ext: 'ply'
+size_pcd: 1225
+step_per_save: 100
+step_per_viz: 25
+name_data_set: 3DMatch
+removal_augmentation: 1
+size_batch: 8
