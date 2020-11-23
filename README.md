@@ -68,8 +68,9 @@ python
 Pretrained models are available for download:
 | Training |  zip |
 |:-:|:--:|
-| 3DMatch | [weights]() |
-| 3DMatch Adapted | [weights]() |
+| 3DMatch | [weights](https://github.com/CVLAB-Unibo/compass/tree/master/pretrained_models/basemodel) |
+| 3DMatch, adapted with ETH | [weights](https://github.com/CVLAB-Unibo/compass/tree/master/pretrained_models/adaptation_eth) |
+| 3DMatch, adapted with StanfordViews | [weights](https://github.com/CVLAB-Unibo/compass/tree/master/pretrained_models/adaptation_stanfordviews) |
 | ModelNet40 | [weights]() |
 
 ## Citation
