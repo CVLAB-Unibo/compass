@@ -22,6 +22,7 @@ def parse_commandline():
     parser.add_argument("--path_ckp_lrf_layer", type=str, default=None, help="Path to pretrained lrf layer.")
     
 
+    # Misc
     parser.add_argument("--port_vis", type=int, default=8888, help="Port for visdom sever.")
 
     parser.add_argument("--use_gpu", type=int, default=1, help="Default 1, set it to 0 to use the CPU only. WARNING: this slows down the computation, use only for testing purposes or if you don't have a CUDA capable GPU.")
