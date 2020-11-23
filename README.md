@@ -48,11 +48,15 @@ python3 -m unittest utils/test_geometry.py
 ## How To
 
 ### Training
-To train a new network from scratch, run:
+To train a new network from scratch on 3DMatch, run:
 ```
-python 
+python apps/train_compass.py --config_file configs/train_3dm.yaml --name_train <name> --path_log <path to log dir> --path_ds <path to dataset> --name_file_folder_train <CSV file with training split> --name_file_folder_validation <CSV file with val split>
 ```
-For available training options, please take a look at `configs/default.yaml`.
+In `configs` there are also pre-configured settings for StanfordViews and ETH.
+To produce the test-time adaptation you need to load a base model (e.g. trained with 3DMatch) and train it with the config file corresponding to the dataset you want to adapt to, specifying the additional command line arguments to load the base model:
+```
+--path_ckp_ts <path to ts file of base model> --path_ckp_s2_layer <path to s2 layer> --path_ckp_lrf_layer <path to lrf layer>
+```
 
 ## Test
 To test the network, 
