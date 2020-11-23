@@ -57,15 +57,6 @@ class CompassNetworkTrainer(nt.NetworkTrainer):
     def init_network(self):
         name_components = ["network_lrf_layer.py"]
 
-        # Create a copy of the network and train file, replicate results
-        shutil.copy2(__file__, os.path.join(self.args.path_log, "network_trainer.py"))
-
-        for name in name_components:
-            path_models = self.args.path_models
-            shutil.copy2(os.path.join(path_models, name), os.path.join(self.args.path_log, name))
-
-        self.logger.info("Component saved stored in {0}.".format(self.args.path_log))
-
         # Load S2 Layer
         self.layer_s2 = nsl.S2Layer(bandwidths=self.args.lrf_bandwidths[0:2],
                                  features=self.args.lrf_features[0:2],
