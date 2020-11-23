@@ -31,6 +31,20 @@ git clone https://github.com/jonas-koehler/s2cnn.git
 cd s2cnn
 python setup.py install
 ```
+
+### Instal and Test Spherical Voxelization
+```bash
+# Install pybind
+sudo apt-get install python-pybind11
+```
+
+```bash
+cd  utils/spherical_voxel/
+python3 setup.py develop
+# The test will fail
+python3 -m unittest utils/test_geometry.py 
+```
+
 ## How To
 
 ### Training
