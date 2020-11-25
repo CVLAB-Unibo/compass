@@ -265,29 +265,16 @@ class CompassNetworkTrainer(nt.NetworkTrainer):
     def do_step_fwd(self, data):
         signal, pts_input, signal_rot_rnd, pts_input_rot_rnd, mats_rot_rnd, name_samples = data
 
-        # cloud_src = PointCloud()
-        # cloud_src.points = Vector3dVector(pts_input.data.cpu().numpy()[0])
-        # cloud_src.paint_uniform_color([1,0,0])
-        # cloud_trg = PointCloud()
-        # cloud_trg.points = Vector3dVector(pts_input_rot_rnd.data.cpu().numpy()[0] @ mats_rot_rnd.data.cpu().numpy()[0])
-        # cloud_trg.paint_uniform_color([1,0,0])
-
-        # draw_geometries([cloud_src])
-        # draw_geometries([cloud_trg])
-
         # Step
         signal = signal.to(self.device)
         signal_rot_rnd = signal_rot_rnd.to(self.device)
 
-        # import torchprof
-        # with torchprof.Profile(self.layer_s2, use_cuda=True) as prof:
         so3_signal = self.layer_s2(signal)
-        # print(prof.display(show_events=False))
+
         so3_signal_rot_rnd = self.layer_s2(signal_rot_rnd)
 
-        # with torchprof.Profile(self.layer_lrf, use_cuda=True) as prof:
         _, lrfs = self.layer_lrf(so3_signal)
-        # print(prof.display(show_events=False))
+
         feature_map_trg, lrfs_rnd = self.layer_lrf(so3_signal_rot_rnd)
 
         mats_rot_rnd = mats_rot_rnd.to(device=self.device).float()
