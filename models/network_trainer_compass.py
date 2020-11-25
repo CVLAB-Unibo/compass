@@ -32,7 +32,7 @@ class CompassNetworkTrainer(nt.NetworkTrainer):
         self.layer_s2 = None
         self.layer_lrf = None
         self.softmax_temp = 1.0
-        self.use_equatorial_grid = 1
+        self.use_equatorial_grid = 0
 
         self.th_cosine = 0.97
 
