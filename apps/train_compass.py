@@ -4,7 +4,7 @@ from models import network_trainer_compass as ntc
 
 
 def parse_commandline():
-    parser = argparse.ArgumentParser(description="SONIC-LRF Network train arguments.")
+    parser = argparse.ArgumentParser(description="Compass Network training arguments.")
 
     """Training"""
     parser.add_argument("--config_file", type=str, required=True, help="Configuration file for training.")
