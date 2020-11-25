@@ -114,7 +114,7 @@ class LocalReferenceFrameBenchmark():
                                                         num_points=self.args.size_point_cloud,
                                                         lrf_bandwidths=self.args.lrf_bandwidths,
                                                         lrf_features=self.args.lrf_features,
-                                                        use_equatorial_grid=self.args.use_equatorial_grid,
+                                                        use_equatorial_grid=0,
                                                         softmax_temp=self.args.softmax_temp,
                                                         radius_support=self.args.radius_descriptor,
                                                         size_batch=self.args.size_batch,
