@@ -79,4 +79,4 @@ class CompassEstimator(lrfe.LRFEstimator):
         return lrfs
 
     def __repr__(self):
-        return self.__class__.__name__ + 'SonicEstimator rad={0}'.format(self.radius_support)
+        return self.__class__.__name__ + 'CompassObjectEstimator rad={0}'.format(self.radius_support)
