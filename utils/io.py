@@ -51,3 +51,79 @@ def load_h5(h5_filename):
     data = f['data'][:]
     label = f['label'][:]
     return (data, label)
+
+def get_pair_and_matrix_3dmatch(file, delimiter="\t", type=np.float32):
+
+    dict = {}
+
+    with open(file, "r") as file_gt:
+        lines = file_gt.readlines()
+
+        for i in range(0, len(lines), 5):
+            key = "{}-{}".format(lines[i + 0].split(delimiter)[0].strip(), lines[i + 0].split(delimiter)[1].strip())
+            line_matrix_row0 = string_to_float(str(lines[i + 1]).strip().split(delimiter), type)
+            line_matrix_row1 = string_to_float(str(lines[i + 2]).strip().split(delimiter), type)
+            line_matrix_row2 = string_to_float(str(lines[i + 3]).strip().split(delimiter), type)
+            line_matrix_row3 = string_to_float(str(lines[i + 4]).strip().split(delimiter), type)
+
+            dict[key] = np.stack([line_matrix_row0, line_matrix_row1, line_matrix_row2, line_matrix_row3])
+
+    return dict
+
+
+def get_overlapping_areas_3dmatch(file, delimiter="\t", type=np.float32):
+    return {}
+
+
+def get_pairs_and_matrix_stanford(file, delimiter="\t", type=np.float32):
+
+    dict_view_gt = {}
+
+    with open(file, "r") as file_gt:
+        lines = file_gt.readlines()
+        num_views = int(lines[0].strip().split(":")[-1])
+
+        lines = lines[1:]
+
+        for i in range(0, len(lines), 5):
+            name_cloud = lines[i + 0].strip().split(".")[0]
+            line_matrix_row0 = string_to_float(str(lines[i + 1]).strip().split(delimiter), type)
+            line_matrix_row1 = string_to_float(str(lines[i + 2]).strip().split(delimiter), type)
+            line_matrix_row2 = string_to_float(str(lines[i + 3]).strip().split(delimiter), type)
+            line_matrix_row3 = string_to_float(str(lines[i + 4]).strip().split(delimiter), type)
+
+            dict_view_gt[name_cloud] = np.stack([line_matrix_row0, line_matrix_row1, line_matrix_row2, line_matrix_row3])
+
+    dict_pairs = {}
+    list_keys = list(dict_view_gt.keys())
+    for i in range(num_views):
+        for j in range(i, num_views):
+            if i != j:
+                name_src = list_keys[i]
+                name_trg = list_keys[j]
+
+                mat_src = dict_view_gt[name_src]
+                mat_trg = dict_view_gt[name_trg]
+
+                mat_trg_to_src = np.linalg.inv(mat_src) @ mat_trg
+                dict_pairs["{}-{}".format(name_src, name_trg)] = mat_trg_to_src
+
+    return dict_pairs
+
+
+def get_overlapping_areas_stanford(file):
+    dict_overlap = {}
+
+    with open(file, "r") as file_gt:
+        lines = file_gt.readlines()
+
+        lines = lines[5:]
+
+        for i in range(0, len(lines)):
+            name_cloud_src = lines[i].strip().split(" ")[3]
+            name_cloud_trg = lines[i].strip().split(" ")[4]
+            overlap = float(str(lines[i].strip().split(" ")[5]))
+
+            dict_overlap["{}-{}".format(name_cloud_src, name_cloud_trg)] = overlap
+
+    return dict_overlap

@@ -72,3 +72,15 @@ def load_models_from_ckp(path_checkpoint, model):
         return True
 
     return False
+
+
+def rotate_batch_cloud(b_points, b_mats):
+
+    """
+    :param points: a tensor of point in row vector format [B X N X 3]
+    :param mats: a tensor of 3 x 3 rotation matrices format [B X 3 X 3]
+    :return:
+    """
+
+    # Tranpose rotation matrices as we multiply row vector points
+    return torch.bmm(b_points, b_mats.transpose(2, 1).contiguous())
