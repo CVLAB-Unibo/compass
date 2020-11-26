@@ -1,0 +1,13 @@
+ext_cloud: 'ply'
+lrf_bandwidths: [24, 24, 24, 24, 24]
+lrf_features: [4, 40, 20, 10, 1]
+leaf: 0.02
+min_distance: 0.02
+radius_detector: 0.08
+radius_descriptor: 0.3
+size_point_cloud: 1220
+th_cosine: 0.97
+name_data_set: 3DMatch
+name_file_gt: gt.log
+name_file_overlap:
+overlap_threshold:
