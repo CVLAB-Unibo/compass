@@ -1,0 +1,13 @@
+ext_cloud: 'ply'
+lrf_bandwidths: [24, 24, 24, 24, 24]
+lrf_features: [4, 40, 20, 10, 1]
+leaf: 0.0
+min_distance: 0.002
+radius_detector: 0.004
+radius_descriptor: 0.015
+size_point_cloud: 1220
+th_cosine: 0.97
+name_data_set: StanfordViews
+name_file_gt: groundTruth.txt
+name_file_overlap: overlappingAreas.txt
+overlap_threshold: 0.1
