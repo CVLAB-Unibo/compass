@@ -14,4 +14,3 @@ step_per_save: 1000
 step_per_viz: 25
 name_data_set: 3DMatch
 removal_augmentation: 1
-size_batch: 8
