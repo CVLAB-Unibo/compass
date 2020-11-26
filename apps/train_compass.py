@@ -29,7 +29,7 @@ def parse_commandline():
     parser.add_argument("--id_gpu", type=int, default=0, help="Id of the GPU to use to train.")
     parser.add_argument("--num_workers", type=int, default=6, help="Num of workers for data loader (#CPU Cores - 1).")
     
-    parser.add_argument("--size_batch", type=int, default=8, help="Size of batch. Also affects GPU VRAM occupation.")
+    parser.add_argument("--size_batch", type=int, default=8, help="Size of batch. Affects training and also GPU VRAM occupation.")
     
 
     return parser.parse_args()
