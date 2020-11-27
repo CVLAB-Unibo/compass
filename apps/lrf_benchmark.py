@@ -19,7 +19,7 @@ def parse_commandline():
     
 
     # Misc
-    parser.add_argument("--is_batch", type=int, default=0, help="Enable visualization.")
+    parser.add_argument("--is_batch", type=int, default=1, help="Set to 0 to enable visualization.")
     
     parser.add_argument("--use_gpu", type=int, default=1, help="Default 1, set it to 0 to use the CPU only. WARNING: this slows down the computation, use only for testing purposes or if you don't have a CUDA capable GPU.")
     parser.add_argument("--id_gpu", type=int, default=0, help="Gpu ID")
