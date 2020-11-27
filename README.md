@@ -52,17 +52,24 @@ To train a new network from scratch on 3DMatch, run:
 ```
 python apps/train_compass.py --config_file configs/train_3dm.yaml --name_train <name> --path_log <path to log dir> --path_ds <path to dataset> --name_file_folder_train <CSV file with training split> --name_file_folder_validation <CSV file with val split>
 ```
-In `configs` there are also pre-configured settings for StanfordViews and ETH.
+In `configs` there are pre-configured settings for StanfordViews and ETH as well.
+
 To produce the test-time adaptation you need to load a base model (e.g. trained with 3DMatch) and train it with the config file corresponding to the dataset you want to adapt to, specifying the additional command line arguments to load the base model:
 ```
 --path_ckp_ts <path to ts file of base model> --path_ckp_s2_layer <path to s2 layer> --path_ckp_lrf_layer <path to lrf layer>
 ```
+In `apps/train_compass.py` you can find additional command line arguments to set.
 
 ## Test
-To test the network, 
+To test the network, run:
 ```
-python 
+python apps/lrf_benchmark.py --config_file configs/test_3dm.yaml --path_results <path to save results> --path_ds <path to single test scene> --path_ckp_layer_s2 <path to s2 layer of the network> --path_ckp_layer_lrf <path to lrf layer> 
 ```
+In `configs` there are pre-configured settings for StanfordViews and ETH as well.
+
+You can also set `--is_batch` to `0` to enable the visualization of point clouds, keypoints and extracted supports.
+
+In `apps/lrf_benchmark.py` you can find additional command line arguments to set.
 
 ## Pretrained Models
 Pretrained models are available for download:
