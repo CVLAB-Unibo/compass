@@ -46,6 +46,10 @@ python3 -m unittest utils/test_geometry.py
 ```
 
 ## How To
+Before training or testing, include the absolute path of the repo in the `PYTHONPATH` environment variable:
+```
+export PYTHONPATH="<path_to_compass>"
+```
 
 ### Training
 To train a new network from scratch on 3DMatch, run:
