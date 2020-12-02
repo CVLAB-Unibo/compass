@@ -64,7 +64,7 @@ To produce the test-time adaptation you need to load a base model (e.g. trained 
 ```
 In `apps/train_compass.py` you can find additional command line arguments to set.
 
-## Test
+### Test
 To test the network, run:
 ```
 python apps/lrf_benchmark.py --config_file configs/test_3dm.yaml --path_results <path to save results> --path_ds <path to single test scene> --path_ckp_layer_s2 <path to s2 layer of the network> --path_ckp_layer_lrf <path to lrf layer> 
