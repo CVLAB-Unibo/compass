@@ -1,3 +1,4 @@
+import open3d as o3d
 import copy
 import csv
 import datetime as dt
@@ -28,8 +29,6 @@ from utils import geometry as ug
 from utils import visualization as uvz
 from utils import torch as utor
 from utils import progress_bar
-
-import open3d as o3d
 
 
 class LocalReferenceFrameBenchmark():
