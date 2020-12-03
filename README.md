@@ -53,6 +53,12 @@ export PYTHONPATH="<path_to_compass>"
 Note: the code is meant to run on a CUDA-capable GPU using PyTorch. If you do not have a CUDA GPU you can set the `--use_gpu` option of the following scripts to 0 and execute on CPU only, but the execution times will higher by orders of magnitude. Executing the code without a GPU is advised for testing purposes only.
 
 ### Training
+Before starting to train, execute:
+```
+python -m visdom.server -p 8888
+```
+This will start a Visdom server, accessible at `localhost:8888` to monitor the training. If you use a different port, remember to specify it in the following scripts with `--port_vis`.
+
 To train a new network from scratch on 3DMatch, run:
 ```
 python apps/train_compass.py --config_file configs/train_3dm.yaml --name_train <name> --path_log <path to log dir> --path_ds <path to dataset> --name_file_folder_train <CSV file with training split> --name_file_folder_validation <CSV file with val split>
