@@ -1,5 +1,7 @@
 # pylint: disable=E1101,R,C
 
+import open3d as o3d
+
 import csv
 import glob
 import math
@@ -13,8 +15,6 @@ import numpy as np
 from utils import io as uio
 from utils import geometry as ug
 from utils import progress_bar
-
-import open3d as o3d
 
 class LocalPointCloudDataset(torch.utils.data.Dataset):
 

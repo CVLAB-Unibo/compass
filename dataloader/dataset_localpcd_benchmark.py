@@ -1,5 +1,7 @@
 # pylint: disable=E1101,R,C
 
+import open3d as o3d
+
 import torch.utils.data
 
 import numpy as np
@@ -7,8 +9,6 @@ import numpy as np
 from utils import io as uio
 from utils import geometry as ug
 from features import det_uniform_sampling as kpus
-
-import open3d as o3d
 
 
 class LRFBenchmarkLPCDDataset(torch.utils.data.Dataset):

@@ -1,6 +1,6 @@
+import open3d as o3d
 import numpy as np
 from abc import ABC, abstractmethod
-import open3d as o3d
 
 class KeypointDetector(ABC):
     """

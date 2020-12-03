@@ -1,3 +1,4 @@
+import open3d as o3d
 from spherical_voxel import spherical_voxel as sv
 from lie_learn.spaces import S2
 from typing import Tuple
@@ -5,7 +6,6 @@ import numpy as np
 import math
 import copy
 import torch
-import open3d as o3d
 
 
 def get_rotation_matrix(alfa, beta, gamma, hom_coord=False):
