@@ -50,6 +50,7 @@ Before training or testing, include the absolute path of the repo in the `PYTHON
 ```
 export PYTHONPATH="<path_to_compass>"
 ```
+Note: the code is meant to run on a CUDA-capable GPU using PyTorch. If you do not have a CUDA GPU you can set the `--use_gpu` option of the following scripts to 0 and execute on CPU only, but the execution times will higher by orders of magnitude. Executing the code without a GPU is advised for testing purposes only.
 
 ### Training
 To train a new network from scratch on 3DMatch, run:
