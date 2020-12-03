@@ -106,4 +106,4 @@ class CompassEstimator(lrfe.LRFEstimator):
         return lrfs, clouds, features_map
 
     def __repr__(self):
-        return self.__class__.__name__ + 'CompassEstimator rad={0}'.format(self.radius_support)
+        return self.__class__.__name__ + ' rad={0}'.format(self.radius_support)

@@ -1,4 +1,3 @@
-from open3d import *
 from abc import ABC, abstractmethod
 
 class LRFEstimator(ABC):
@@ -15,5 +14,5 @@ class LRFEstimator(ABC):
         pass
 
     def __repr__(self):
-        return self.__class__.__name__ + 'LRFEstimator'
+        return self.__class__.__name__
 
