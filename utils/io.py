@@ -1,8 +1,9 @@
 from plyfile import PlyData
-import open3d as o3d
 
 import numpy as np
 import h5py
+
+import open3d as o3d
 
 
 def read_ply(name_file):

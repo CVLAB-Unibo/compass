@@ -1,5 +1,3 @@
-from open3d import *
-
 from features import detector as det
 
 import os

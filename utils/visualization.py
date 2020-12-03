@@ -1,6 +1,6 @@
 from matplotlib import pyplot as plt
-import open3d as o3d
 import numpy as np
+import open3d as o3d
 
 def viz_keypoints(cloud, indices_kp, scale=1.0, color_cloud=[1, 0, 1], color_keypoints=[0, 1, 0]):
     """

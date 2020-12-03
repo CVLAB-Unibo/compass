@@ -21,8 +21,6 @@ import torch
 import torchnet.meter as tnt
 import os
 
-from open3d import *
-
 
 class CompassNetworkTrainer(nt.NetworkTrainer):
 

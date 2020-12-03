@@ -2,12 +2,13 @@
 
 import torch.utils.data
 
-import open3d as o3d
 import numpy as np
 
 from utils import io as uio
 from utils import geometry as ug
 from features import det_uniform_sampling as kpus
+
+import open3d as o3d
 
 
 class LRFBenchmarkLPCDDataset(torch.utils.data.Dataset):
