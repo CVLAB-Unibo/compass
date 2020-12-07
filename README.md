@@ -4,7 +4,7 @@ Repository containing the code of "Learning to Orient Surfaces by Self-supervise
 [[Paper]](https://arxiv.org/abs/2011.03298) - [[Video]]() - [[Poster]]()
 
 ### Authors
-Riccardo Spezialetti - Federico Stella - Marlon Marcon - Luciano Silva - [Samuele Salti](https://vision.deis.unibo.it/ssalti/) - [Luigi Di Stefano](https://www.unibo.it/sitoweb/luigi.distefano/)
+[Riccardo Spezialetti](https://www.unibo.it/sitoweb/riccardo.spezialetti/) - Federico Stella - Marlon Marcon - Luciano Silva - [Samuele Salti](https://vision.deis.unibo.it/ssalti/) - [Luigi Di Stefano](https://www.unibo.it/sitoweb/luigi.distefano/)
 
 <p align="center">
   <img width="600" height="400" src="assets/teaser.png">
