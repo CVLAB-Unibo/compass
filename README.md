@@ -108,4 +108,6 @@ Code is licensed under Apache 2.0 License. More information in the `LICENSE` fil
 
 ## Acknowledgements
 Parts of our code are from other repositories:
+* [https://github.com/jonas-koehler/s2cnn](https://github.com/jonas-koehler/s2cnn)
+* [https://github.com/qq456cvb/PRIN](https://github.com/qq456cvb/PRIN)
 * [https://www.lfd.uci.edu/~gohlke/code/transformations.py.html](https://www.lfd.uci.edu/~gohlke/code/transformations.py.html)
