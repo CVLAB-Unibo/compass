@@ -94,10 +94,11 @@ Pretrained models are available for download:
 ## Citation
 If you find this code useful in your research, please cite:
 ```
-@inproceedings{xxxx,
-  title={yyyyyyy},
-  author={zzzz},
-  booktitle={zzzz},
+@article{spezialetti2020learning,
+  title={Learning to Orient Surfaces by Self-supervised Spherical CNNs},
+  author={Spezialetti, Riccardo and Stella, Federico and Marcon, Marlon and Silva, Luciano and Salti, Samuele and Di Stefano, Luigi},
+  journal={Advances in Neural Information Processing Systems},
+  volume={33},
   year={2020}
 }
 ```
