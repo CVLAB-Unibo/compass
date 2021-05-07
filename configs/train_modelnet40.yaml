@@ -1,0 +1,16 @@
+size_channels: 4
+size_bandwidth: 24
+lrf_bandwidths: [24, 24, 24, 24, 24]
+lrf_features: [4, 40, 20, 10, 1]
+augmentation: 1
+leaf_sub_sampling: 0
+leaf_keypoints: 0.1
+radius_descriptor: 0.3
+epochs_max: 100
+learning_rate: 0.0005
+ext: 'h5'
+size_pcd: 2048
+step_per_save: 200
+step_per_viz: 50
+name_data_set: ModelNet
+removal_augmentation: 0
