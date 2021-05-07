@@ -89,7 +89,7 @@ Pretrained models are available for download:
 | 3DMatch | [weights](https://github.com/CVLAB-Unibo/compass/tree/master/pretrained_models/basemodel) |
 | 3DMatch, adapted with ETH | [weights](https://github.com/CVLAB-Unibo/compass/tree/master/pretrained_models/adaptation_eth) |
 | 3DMatch, adapted with StanfordViews | [weights](https://github.com/CVLAB-Unibo/compass/tree/master/pretrained_models/adaptation_stanfordviews) |
-| ModelNet40 | [weights]() |
+| ModelNet40 | [weights](https://github.com/CVLAB-Unibo/compass/tree/master/pretrained_models/modelnet40) |
 
 ## Citation
 If you find this code useful in your research, please cite:
